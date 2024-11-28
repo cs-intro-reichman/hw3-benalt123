@@ -9,6 +9,7 @@ public class Anagram {
 
 			// Tests the preProcess function.
 			System.out.println(preProcess("What? No way!!!"));
+			System.out.println(randomAnagram("stringst"));
 			
 			// Tests the randomAnagram function.
 			System.out.println("silent and " + randomAnagram("silent") + " are anagrams.");
@@ -24,8 +25,10 @@ public class Anagram {
 				if (!pass) break;
 			}
 			System.out.println(pass ? "test passed" : "test Failed");
+			
+			
 		
-		}	
+	}	
 		// Returns true if the two given strings are anagrams, false otherwise.
 		public static boolean isAnagram(String str1, String str2) {
 			str1 = preProcess(str1);
@@ -43,8 +46,8 @@ public class Anagram {
 						if(str1.charAt(i) == str2.charAt(j)) {
 							str2 = removeLetter(str2, str1.charAt(i));
 							removed = true;
+							tofind = true;
 						}
-						tofind = true;
 					}	
 				}	
 			return tofind;	
@@ -88,8 +91,6 @@ public class Anagram {
 
 			return nstr; 
 		}
-
-
 		//receives a string and a char and creates new string without the char
 		//will remove the char only once even if appears few times in the string
 		public static String removeLetter(String str, char c){
@@ -111,7 +112,7 @@ public class Anagram {
 			}
 			return news;
 		}
-	
+		
 			
 
 	
