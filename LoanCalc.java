@@ -31,7 +31,7 @@ public class LoanCalc {
 	    
 		double left = loan;
 		for(int i = 0; i < n; i++) {
-			left = (left - payment)*((double) (1+ rate/100));
+			left = (left - payment)*((double) (1 + rate/100));
 		}
 		return left;
 	}
