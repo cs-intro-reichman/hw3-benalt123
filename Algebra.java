@@ -3,7 +3,8 @@
 // Math.sqrt. All the functions in this class operate on int values and
 // return int values.
 
-public class Algebra {
+public class Algebra 
+{
 	public static void main(String args[]) {
 	    // Tests some of the operations
 	    System.out.println(plus(2,3));   // 2 + 3
@@ -21,47 +22,75 @@ public class Algebra {
    		System.out.println(sqrt(36));
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
+		System.out.println(times(5,8));
 	}  
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		for(int i = 0; i<x2; i++)
+			x1++;
+		return x1;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		for(int i = 0; i<x2; i++)
+			x1--;
+		return x1;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int mult = 0;
+		for(int i = 0; i<x2; i++)
+			mult = plus(mult,x1);
+		return mult;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int sum = 1;
+		for(int i = 0; i<n; i++)
+			sum = times(sum,x);
+		return sum;
 	}
 
 	// Returns the integer part of x1 / x2 
-	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+	public static int div(int x1, int x2) 
+	{
+		for (int num = 0; num <= x1 ; num++) {
+			if (x1 == times(x2, num)) {
+				return num;
+			} 
+			else
+				if (x1 < times(x2, num)) {
+					return (num--);
+				}
+	    }		
+		return 0;			
 	}
 
 	// Returns x1 % x2
-	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+	public static int mod(int x1, int x2)
+	{
+		int num = div(x1,x2);
+		int rmnd = minus(x1, times(x2,num));
+		return rmnd;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
-		return 0;
+		boolean tobe = false;
+		int number = 0;
+		for(int num = 0; num < x && !tobe; num++)
+		{
+		    int nextnum = num++; 
+			if(pow(num,2)==x || pow(nextnum,2) >x)
+			{
+				tobe = true ; 
+				number = num;
+			}
+		}
+	    return number;
 	}	  	  
 }
