@@ -24,10 +24,7 @@ public class Anagram {
 				pass = pass && isAnagram(str, randomAnagram);
 				if (!pass) break;
 			}
-			System.out.println(pass ? "test passed" : "test Failed");
-			
-			
-		
+			System.out.println(pass ? "test passed" : "test Failed");	
 	}	
 		// Returns true if the two given strings are anagrams, false otherwise.
 		public static boolean isAnagram(String str1, String str2) {
